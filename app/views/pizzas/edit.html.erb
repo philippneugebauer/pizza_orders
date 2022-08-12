@@ -1,0 +1,8 @@
+<h1>Editing pizza</h1>
+
+<%= render "form", pizza: @pizza %>
+
+<div class="mt-3">
+  <%= link_to "Show this pizza", @pizza, class: "btn btn-outline-secondary" %> |
+  <%= link_to "Back to pizzas", pizzas_path, class: "btn btn-outline-secondary" %>
+</div>
