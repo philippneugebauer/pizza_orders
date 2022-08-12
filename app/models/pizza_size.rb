@@ -3,4 +3,5 @@ class PizzaSize < ApplicationRecord
 
   validates :name, presence: true
   validates :multiplier, numericality: { greater_than: 0 }
+  validates :name, uniqueness: true
 end
