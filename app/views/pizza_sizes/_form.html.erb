@@ -1,0 +1,27 @@
+<%= form_with(model: pizza_size) do |form| %>
+  <% if @pizza_size.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@pizza_size.errors.count, "error") %> prohibited this pizza_size from being saved:</h2>
+
+      <ul>
+        <% pizza_size.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :multiplier, class: "form-label" %>
+    <%= form.text_field :multiplier, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
