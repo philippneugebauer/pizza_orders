@@ -1,0 +1,35 @@
+<%= form_with(model: order) do |form| %>
+  <% if @order.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :promotion_codes, class: "form-label" %>
+    <%= form.text_field :promotion_codes, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :discount_code, class: "form-label" %>
+    <%= form.text_area :discount_code, class: "form-control" %>
+  </div>
+
+  <div id='order-items'>
+    <%= form.fields_for :order_items do |item| %>
+      <%= render 'order_item_fields', form: item %>
+    <% end %>
+  </div>
+  <%= link_to_add_nested(form, :order_items, '#order-items', link_text: "Add Pizza") %>
+
+  <div class="d-flex justify-content-between mt-4">
+    <%= form.submit "Order", class: "btn btn-primary" %>
+    <%= link_to "Back to orders", orders_path, class: "btn btn-outline-secondary" %>
+  </div>
+<% end %>
