@@ -6,10 +6,6 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
   end
 
-  # GET /ingredients/1 or /ingredients/1.json
-  def show
-  end
-
   # GET /ingredients/new
   def new
     @ingredient = Ingredient.new

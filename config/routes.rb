@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :promotions
-  resources :pizza_sizes
-  resources :pizzas
-  resources :ingredients
-  resources :discounts
+  resources :promotions, exclude: [:show]
+  resources :pizza_sizes, exclude: [:show]
+  resources :pizzas, exclude: [:show]
+  resources :ingredients, exclude: [:show]
+  resources :discounts, exclude: [:show]
   resources :orders
 
   root "orders#index"

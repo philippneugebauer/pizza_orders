@@ -6,10 +6,6 @@ class PizzaSizesController < ApplicationController
     @pizza_sizes = PizzaSize.all
   end
 
-  # GET /pizza_sizes/1 or /pizza_sizes/1.json
-  def show
-  end
-
   # GET /pizza_sizes/new
   def new
     @pizza_size = PizzaSize.new

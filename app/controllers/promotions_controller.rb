@@ -6,10 +6,6 @@ class PromotionsController < ApplicationController
     @promotions = Promotion.all
   end
 
-  # GET /promotions/1 or /promotions/1.json
-  def show
-  end
-
   # GET /promotions/new
   def new
     @promotion = Promotion.new
