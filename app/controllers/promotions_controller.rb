@@ -26,10 +26,8 @@ class PromotionsController < ApplicationController
     respond_to do |format|
       if @promotion.save
         format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully created." }
-        format.json { render :show, status: :created, location: @promotion }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @promotion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +37,8 @@ class PromotionsController < ApplicationController
     respond_to do |format|
       if @promotion.update(promotion_params)
         format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully updated." }
-        format.json { render :show, status: :ok, location: @promotion }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @promotion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +49,6 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to promotions_url, notice: "Promotion was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
