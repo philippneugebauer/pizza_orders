@@ -24,6 +24,8 @@ gem 'rails_best_practices'
 
 gem "rubycritic", require: false
 
+gem "vanilla_nested"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
