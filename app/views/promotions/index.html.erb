@@ -1,0 +1,35 @@
+<h1>
+  Promotions
+  <%= link_to "New promotion", new_promotion_path, class: "btn btn-outline-primary" %>
+</h1>
+
+<div class="table-responsive">
+  <table class="table table-hover" aria-label="table for Promotions">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Pizza size</th>
+        <th scope="col">Pizza</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @promotions.each do |promotion| %>
+        <tr>
+          <td><%= promotion.code %></td>
+          <td><%= promotion.from %></td>
+          <td><%= promotion.to %></td>
+          <td><%= promotion.pizza_size_id %></td>
+          <td><%= promotion.pizza_id %></td>
+          <td>
+            <%= link_to "Show", promotion, class: "btn btn-sm btn-outline-secondary" %>
+            <%= link_to "Edit", edit_promotion_path(@promotion), class: "btn btn-sm btn-outline-warning" %>
+            <%= button_to "Delete", @promotion, method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-sm btn-outline-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
