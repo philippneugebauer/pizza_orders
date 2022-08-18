@@ -18,8 +18,8 @@
           <td><%= pizza.name %></td>
           <td><%= pizza.price %></td>
           <td>
-            <%= link_to "Edit", edit_pizza_path(@pizza), class: "btn btn-sm btn-outline-warning" %>
-            <%= button_to "Delete", @pizza, method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-sm btn-outline-danger" %>
+            <%= link_to "Edit", edit_pizza_path(pizza), class: "btn btn-sm btn-outline-warning" %>
+            <%= button_to "Delete", pizza, method: :delete, form_class: "form-inline", data: [confirm: "Are you sure?"], class: "btn btn-sm btn-outline-danger" %>
           </td>
         </tr>
       <% end %>
