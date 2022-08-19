@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+        format.html { redirect_to orders_path, notice: "Order was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   def update
     @order.update(state: "completed")
 
-    redirect_to order_url(@order), notice: "Order completed."
+    redirect_to orders_path, notice: "Order completed."
   end
 
   private
