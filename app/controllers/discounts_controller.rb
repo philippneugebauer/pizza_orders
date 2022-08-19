@@ -21,7 +21,7 @@ class DiscountsController < ApplicationController
 
     respond_to do |format|
       if @discount.save
-        format.html { redirect_to discount_url(@discount), notice: "Discount was successfully created." }
+        format.html { redirect_to discounts_url, notice: "Discount was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class DiscountsController < ApplicationController
   def update
     respond_to do |format|
       if @discount.update(discount_params)
-        format.html { redirect_to discount_url(@discount), notice: "Discount was successfully updated." }
+        format.html { redirect_to discounts_url, notice: "Discount was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

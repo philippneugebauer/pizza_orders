@@ -21,7 +21,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.save
-        format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully created." }
+        format.html { redirect_to promotions_url, notice: "Promotion was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class PromotionsController < ApplicationController
   def update
     respond_to do |format|
       if @promotion.update(promotion_params)
-        format.html { redirect_to promotion_url(@promotion), notice: "Promotion was successfully updated." }
+        format.html { redirect_to promotions_url, notice: "Promotion was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
