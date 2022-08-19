@@ -16,7 +16,7 @@
       <% @pizzas.each do |pizza| %>
         <tr>
           <td><%= pizza.name %></td>
-          <td><%= pizza.price %></td>
+          <td><%= number_to_currency(pizza.price, format: '%n%u', unit: "€") %></td>
           <td>
             <%= link_to "Edit", edit_pizza_path(pizza), class: "btn btn-sm btn-outline-warning" %>
             <%= button_to "Delete", pizza, method: :delete, form_class: "form-inline", data: [confirm: "Are you sure?"], class: "btn btn-sm btn-outline-danger" %>

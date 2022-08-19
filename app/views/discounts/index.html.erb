@@ -16,7 +16,7 @@
       <% @discounts.each do |discount| %>
         <tr>
           <td><%= discount.code %></td>
-          <td><%= discount.percentage %></td>
+          <td><%= number_to_percentage(discount.percentage, precision: 2) %></td>
           <td>
             <%= link_to "Edit", edit_discount_path(discount), class: "btn btn-sm btn-outline-warning" %>
             <%= button_to "Delete", discount, method: :delete, form_class: "form-inline", data: [confirm: "Are you sure?"], class: "btn btn-sm btn-outline-danger" %>
