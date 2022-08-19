@@ -6,4 +6,6 @@ class OrderItem < ApplicationRecord
   has_many :order_item_ingredients
   has_many :extras, -> { where(kind: "extras") }, class_name: 'OrderItemIngredient'
   has_many :omited, -> { where(kind: "omited") }, class_name: 'OrderItemIngredient'
+
+  validates :order, :pizza, :pizza_size, presence: true
 end
