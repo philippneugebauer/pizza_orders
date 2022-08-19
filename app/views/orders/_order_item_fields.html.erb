@@ -4,24 +4,25 @@
       <h2>Pizza
         <%= link_to_remove_nested(form, fields_wrapper_selector: '.wrapper-div', link_classes: "btn btn-outline-danger btn-sm") %>
       </h2>
+
       <div class="mb-3">
-        <%= form.label :name, class: "form-label" %>
-        <%= form.text_field :name, class: "form-control" %>
+        <%= form.label :pizza_id, class: "form-label" %>
+        <%= form.select :pizza_id, Pizza.all.collect{|p| [p.name, p.id]}, {}, class: "form-select" %>
       </div>
 
       <div class="mb-3">
-        <%= form.label :size, class: "form-label" %>
-        <%= form.text_area :size, class: "form-control" %>
+        <%= form.label :pizza_size_id, class: "form-label" %>
+        <%= form.select :pizza_size_id, PizzaSize.all.collect{|p| [p.name, p.id]}, {}, class: "form-select" %>
       </div>
 
       <div class="mb-3">
         <%= form.label :extras, class: "form-label" %>
-        <%= form.text_field :extras, class: "form-control" %>
+        <%= form.select :extras, Ingredient.all.collect{|i| [i.name, i.id]}, {}, class: "form-select", multiple: true %>
       </div>
 
       <div class="mb-3">
         <%= form.label :omited, class: "form-label" %>
-        <%= form.text_field :omited, class: "form-control" %>
+        <%= form.select :omited, Ingredient.all.collect{|i| [i.name, i.id]}, {}, class: "form-select", multiple: true %>
       </div>
     </div>
   </div>
