@@ -1,4 +1,7 @@
 class Promotion < ApplicationRecord
+  has_many :order_promotions
+  has_many :orders, through: :order_promotions
+
   belongs_to :pizza_size
   belongs_to :pizza
 
