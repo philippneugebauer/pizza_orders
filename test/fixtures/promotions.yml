@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 2FOR1
+  from: 2
+  to: 1
+  pizza_size: one
+  pizza: one
+
+two:
+  code: 2FOR1
+  from: 2
+  to: 1
+  pizza_size: one
+  pizza: one
+
+three:
+  code: 2FOR2
+  from: 2
+  to: 1
+  pizza_size: one
+  pizza: one
+
+# two:
+#   code: MyString
+#   from: 1
+#   to: 1
+#   pizza_size: two
+#   pizza: two

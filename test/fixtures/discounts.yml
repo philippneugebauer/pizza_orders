@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 10%
+  percentage: 10
+
+two:
+  code: 5%
+  percentage: 5
