@@ -6,28 +6,28 @@
 <% @orders.each do |order| %>
   <div class="card mt-3">
     <div class="card-body">
-      <div className="row">
-        <div className="col-6">
-          <table className="table table-borderless" aria-label="order details">
+      <div class="row">
+        <div class="col-6">
+          <table class="table table-borderless mb-3" aria-label="order details">
             <tbody>
               <tr>
                 <td>Ordered</td>
-                <td><%= order.created_at %></td>
+                <td><%= order.created_at.strftime("%B %d, %Y %R") %></td>
               </tr>
               <tr>
                 <td>Promotion Codes</td>
-                <td><%= order.promotion_codes %></td>
+                <td><%= order.promotions.map {|p| p.code}.join(", ") %></td>
               </tr>
               <tr>
                 <td>Discount Code</td>
-                <td><%= order.discount_code %></td>
+                <td><%= order.discount.try(:code) %></td>
               </tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
+              <tr><td></td><td></td></tr>
+              <tr><td></td><td></td></tr>
+              <tr><td></td><td></td></tr>
               <tr>
                 <td>Total Price</td>
-                <td><%= order.price %>€</td>
+                <td><%= number_to_currency(order.price, format: '%n%u', unit: "€") %></td>
               </tr>
             </tbody>
           </table>
@@ -36,10 +36,22 @@
             <%= form.submit "Complete", class: "btn btn-primary" %>
           <% end %>
         </div>
-        <div className="col-6">
+        <div class="col-6">
           <ul aria-label="order item list">
             <% order.order_items.each do |item| %>
-              <li><%= "#{item.name} (#{item.size})" %></li>
+              <li>
+                <%= "#{item.pizza.name} (#{item.pizza_size.name})" %>
+                <% if item.extras.any? || item.omited.any? %>
+                  <ul aria-label="order item extra or omited ingredients">
+                    <% if item.extras.any? %>
+                      <li><%= "Add: #{item.extras.map {|e| e.ingredient.name}.join(", ")}" %></li>
+                    <% end %>
+                    <% if item.omited.any? %>
+                      <li><%= "Remove: #{item.omited.map {|e| e.ingredient.name}.join(", ")}" %></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </div>
