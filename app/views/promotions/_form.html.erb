@@ -28,12 +28,12 @@
 
   <div class="mb-3">
     <%= form.label :pizza_size_id, class: "form-label" %>
-    <%= form.text_field :pizza_size_id, class: "form-control" %>
+    <%= form.select :pizza_size_id, PizzaSize.all.collect{|p| [p.name, p.id]}, {}, class: "form-select" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :pizza_id, class: "form-label" %>
-    <%= form.text_field :pizza_id, class: "form-control" %>
+    <%= form.select :pizza_id, Pizza.all.collect{|p| [p.name, p.id]}, {}, class: "form-select" %>
   </div>
 
   <div>
