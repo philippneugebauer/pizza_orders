@@ -21,7 +21,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to ingredient_url(@ingredient), notice: "Ingredient was successfully created." }
+        format.html { redirect_to ingredients_path, notice: "Ingredient was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to ingredient_url(@ingredient), notice: "Ingredient was successfully updated." }
+        format.html { redirect_to ingredients_path, notice: "Ingredient was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

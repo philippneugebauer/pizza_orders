@@ -21,7 +21,7 @@ class PizzaSizesController < ApplicationController
 
     respond_to do |format|
       if @pizza_size.save
-        format.html { redirect_to pizza_size_url(@pizza_size), notice: "Pizza size was successfully created." }
+        format.html { redirect_to pizza_sizes_url, notice: "Pizza size was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class PizzaSizesController < ApplicationController
   def update
     respond_to do |format|
       if @pizza_size.update(pizza_size_params)
-        format.html { redirect_to pizza_size_url(@pizza_size), notice: "Pizza size was successfully updated." }
+        format.html { redirect_to pizza_sizes_url, notice: "Pizza size was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
