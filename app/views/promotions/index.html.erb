@@ -21,8 +21,8 @@
           <td><%= promotion.code %></td>
           <td><%= promotion.from %></td>
           <td><%= promotion.to %></td>
-          <td><%= promotion.pizza_size_id %></td>
-          <td><%= promotion.pizza_id %></td>
+          <td><%= promotion.pizza_size.name %></td>
+          <td><%= promotion.pizza.name %></td>
           <td>
             <%= link_to "Edit", edit_promotion_path(promotion), class: "btn btn-sm btn-outline-warning" %>
             <%= button_to "Delete", promotion, method: :delete, form_class: "form-inline", data: [confirm: "Are you sure?"], class: "btn btn-sm btn-outline-danger" %>
