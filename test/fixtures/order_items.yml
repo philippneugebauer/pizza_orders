@@ -1,0 +1,49 @@
+one:
+  pizza: one
+  pizza_size: one
+  order: one
+
+two:
+  pizza: one
+  pizza_size: one
+  order: two
+
+five:
+  pizza: one
+  pizza_size: one
+  order: two
+
+three:
+  pizza: one
+  pizza_size: one
+  order: three
+
+eight:
+  pizza: one
+  pizza_size: one
+  order: three
+
+four:
+  pizza: one
+  pizza_size: one
+  order: four
+
+seven:
+  pizza: one
+  pizza_size: one
+  order: four
+
+six:
+  pizza: one
+  pizza_size: one
+  order: five
+
+nine:
+  pizza: one
+  pizza_size: one
+  order: six
+
+ten:
+  pizza: one
+  pizza_size: one
+  order: six

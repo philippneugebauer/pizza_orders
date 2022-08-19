@@ -1,0 +1,28 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 10
+  state: open
+
+two:
+  price: 10
+  state: open
+
+three:
+  price: 10
+  state: open
+  discount: one
+
+four:
+  price: 10
+  state: open
+  discount: one
+
+five:
+  price: 10
+  state: open
+
+six:
+  price: 10
+  state: open
+

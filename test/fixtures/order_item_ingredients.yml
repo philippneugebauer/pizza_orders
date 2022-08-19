@@ -1,0 +1,26 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_item: one
+  ingredient: one
+  kind: extras
+
+two:
+  order_item: two
+  ingredient: one
+  kind: omited
+
+three:
+  order_item: nine
+  ingredient: one
+  kind: extras
+
+four:
+  order_item: nine
+  ingredient: one
+  kind: omited
+
+five:
+  order_item: ten
+  ingredient: one
+  kind: omited
