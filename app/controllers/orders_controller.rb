@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
+    @order = Order.build(order_params)
 
     respond_to do |format|
       if @order.save
