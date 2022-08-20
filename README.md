@@ -44,6 +44,8 @@ rails test
 rails test:system
 ```
 
+The test coverage can be found at `/coverage/index.html` afte test execution.
+
 ## Domain Model
 
 ![domain model image](domain_model.png)
