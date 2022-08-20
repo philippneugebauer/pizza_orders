@@ -56,8 +56,10 @@ reek
 rails_best_practices
 ```
 
-I haven't fixed all warnings or silenced them. It's arguable to which extend you must follow such gems.
-Lots of it must be agreed on within the team.
+I haven't fixed all warnings or silenced them.
+It's arguable to which extend you must follow such gems.
+Even though such gems are a great indicator for problems, common sense must be applied for its usefulness instead of rigid following.
+Anyway, such rules need to be agreed on within the team.
 
 ## Domain Model
 
