@@ -49,13 +49,14 @@ class PizzaSizesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pizza_size
-      @pizza_size = PizzaSize.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def pizza_size_params
-      params.require(:pizza_size).permit(:name, :multiplier)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pizza_size
+    @pizza_size = PizzaSize.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def pizza_size_params
+    params.require(:pizza_size).permit(:name, :multiplier)
+  end
 end
