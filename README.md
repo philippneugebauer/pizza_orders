@@ -46,6 +46,19 @@ rails test:system
 
 The test coverage can be found at `/coverage/index.html` afte test execution.
 
+## Static Code Analyzer
+
+```
+brakeman
+rubocop
+rubycritic
+reek
+rails_best_practices
+```
+
+I haven't fixed all warnings or silenced them. It's arguable to which extend you must follow such gems.
+Lots of it must be agreed on within the team.
+
 ## Domain Model
 
 ![domain model image](domain_model.png)
