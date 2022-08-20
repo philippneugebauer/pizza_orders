@@ -1,0 +1,29 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/**'
+    - 'config/**/**'
+
+StringLiterals:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
