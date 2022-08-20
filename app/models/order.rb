@@ -46,8 +46,8 @@ class Order < ApplicationRecord
     costs_of_promotion_items = 0
     non_promotional_order_items = order_items
 
-    promotions.each do |p|
-      result = p.compute_promotion(order_items)
+    order_promotions.each do |op|
+      result = op.promotion.compute_promotion(order_items)
 
       non_promotional_order_items -= result[:affected_order_items]
       costs_of_promotion_items += result[:promotion_item_costs]
