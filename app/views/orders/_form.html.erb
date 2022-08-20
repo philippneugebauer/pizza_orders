@@ -13,12 +13,12 @@
 
   <div class="mb-3">
     <%= form.label :promotions, class: "form-label" %>
-    <%= form.select :promotions, Promotion.all.collect{|p| [p.code, p.id]}, {}, class: "form-select", multiple: true %>
+    <%= form.select :promotions, Promotion.all.collect{ |p| [p.code, p.id] }, {}, class: "form-select", multiple: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :discount_id, class: "form-label" %>
-    <%= form.select :discount_id, Discount.all.collect{|d| [d.code, d.id]}, {include_blank: true}, class: "form-select" %>
+    <%= form.select :discount_id, Discount.all.collect{ |d| [d.code, d.id] }, { include_blank: true }, class: "form-select" %>
   </div>
 
   <div id='order-items'>
