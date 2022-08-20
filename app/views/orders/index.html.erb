@@ -14,14 +14,18 @@
                 <td>Ordered</td>
                 <td><%= order.created_at.strftime("%B %d, %Y %R") %></td>
               </tr>
-              <tr>
-                <td>Promotion Codes</td>
-                <td><%= order.promotions.map {|p| p.code}.join(", ") %></td>
-              </tr>
-              <tr>
-                <td>Discount Code</td>
-                <td><%= order.discount.try(:code) %></td>
-              </tr>
+              <% if order.promotions.any? %>
+                <tr>
+                  <td>Promotion Codes</td>
+                  <td><%= order.promotions.map { |p| p.code }.join(", ") %></td>
+                </tr>
+              <% end %>
+              <% if order.discount %>
+                <tr>
+                  <td>Discount Code</td>
+                  <td><%= order.discount.try(:code) %></td>
+                </tr>
+              <% end %>
               <tr><td></td><td></td></tr>
               <tr><td></td><td></td></tr>
               <tr><td></td><td></td></tr>
