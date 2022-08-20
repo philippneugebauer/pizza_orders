@@ -1,7 +1,7 @@
 <%= form_with(model: discount) do |form| %>
-  <% if @discount.errors.any? %>
+  <% if discount.errors.any? %>
     <div class="alert alert-danger">
-      <h2><%= pluralize(@discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
+      <h2><%= pluralize(discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
 
       <ul>
         <% discount.errors.each do |error| %>

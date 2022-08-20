@@ -1,7 +1,7 @@
 <%= form_with(model: ingredient) do |form| %>
-  <% if @ingredient.errors.any? %>
+  <% if ingredient.errors.any? %>
     <div class="alert alert-danger">
-      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+      <h2><%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
 
       <ul>
         <% ingredient.errors.each do |error| %>

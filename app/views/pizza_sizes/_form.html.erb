@@ -1,7 +1,7 @@
 <%= form_with(model: pizza_size) do |form| %>
-  <% if @pizza_size.errors.any? %>
+  <% if pizza_size.errors.any? %>
     <div class="alert alert-danger">
-      <h2><%= pluralize(@pizza_size.errors.count, "error") %> prohibited this pizza_size from being saved:</h2>
+      <h2><%= pluralize(pizza_size.errors.count, "error") %> prohibited this pizza_size from being saved:</h2>
 
       <ul>
         <% pizza_size.errors.each do |error| %>
