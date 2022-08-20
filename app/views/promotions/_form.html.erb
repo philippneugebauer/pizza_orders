@@ -18,12 +18,12 @@
 
   <div class="mb-3">
     <%= form.label :from, class: "form-label" %>
-    <%= form.number_field :from, class: "form-control" %>
+    <%= form.number_field :from, min: 1, step: 1, class: "form-control" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :to, class: "form-label" %>
-    <%= form.number_field :to, class: "form-control" %>
+    <%= form.number_field :to, min: 0, step: 1, class: "form-control" %>
   </div>
 
   <div class="mb-3">
