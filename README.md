@@ -46,4 +46,6 @@ rails test:system
 
 ## Domain Model
 
-[domain_model.pdf](domain_model.pdf) visualizes the domain model generated with [rails-erd](https://github.com/voormedia/rails-erd)
+![domain model image](domain_model.pdf)
+
+generated with [rails-erd](https://github.com/voormedia/rails-erd)
