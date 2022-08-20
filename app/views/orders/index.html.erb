@@ -11,18 +11,18 @@
           <table class="table table-borderless mb-3" aria-label="order details">
             <tbody>
               <tr>
-                <td>Ordered</td>
+                <td class="table-column-width">Ordered</td>
                 <td><%= order.created_at.strftime("%B %d, %Y %R") %></td>
               </tr>
               <% if order.promotions.any? %>
                 <tr>
-                  <td>Promotion Codes</td>
+                  <td class="table-column-width">Promotion Codes</td>
                   <td><%= order.promotions.map { |p| p.code }.join(", ") %></td>
                 </tr>
               <% end %>
               <% if order.discount %>
                 <tr>
-                  <td>Discount Code</td>
+                  <td class="table-column-width">Discount Code</td>
                   <td><%= order.discount.try(:code) %></td>
                 </tr>
               <% end %>
@@ -30,7 +30,7 @@
               <tr><td></td><td></td></tr>
               <tr><td></td><td></td></tr>
               <tr>
-                <td>Total Price</td>
+                <td class="table-column-width">Total Price</td>
                 <td><%= number_to_currency(order.price, format: '%n%u', unit: "€") %></td>
               </tr>
             </tbody>
