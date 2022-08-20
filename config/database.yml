@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  host: db
   database: pizza_orders_production
   username: pizza_orders
   password: <%= ENV["PIZZA_ORDERS_DATABASE_PASSWORD"] %>
