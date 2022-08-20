@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: postgres:14
+    shm_size: 1g
+    restart: unless-stopped
+    # volumes:
+    #   - ./db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: pizza_orders_production
+      POSTGRES_USER: pizza_orders
+      POSTGRES_PASSWORD: pizza_orders_pw
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:4000"
+    environment:
+      PIZZA_ORDERS_DATABASE_PASSWORD: pizza_orders_pw
+      RAILS_SEED: true
+      RAILS_ENV: production
+      PORT: 4000
+    depends_on:
+      - db
