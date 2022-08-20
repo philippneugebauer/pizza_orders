@@ -1,2 +1,0 @@
-module PizzaSizesHelper
-end
