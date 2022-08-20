@@ -17,7 +17,15 @@ class PromotionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create promotion" do
     assert_difference("Promotion.count") do
-      post promotions_url, params: { promotion: { code: "#{@promotion.code}1", from: @promotion.from, pizza_id: @promotion.pizza_id, pizza_size_id: @promotion.pizza_size_id, to: @promotion.to } }
+      post promotions_url, params: {
+        promotion: {
+          code: "#{@promotion.code}1",
+          from: @promotion.from,
+          pizza_id: @promotion.pizza_id,
+          pizza_size_id: @promotion.pizza_size_id,
+          to: @promotion.to
+        }
+      }
     end
 
     assert_redirected_to promotions_url
@@ -29,7 +37,15 @@ class PromotionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update promotion" do
-    patch promotion_url(@promotion), params: { promotion: { code: "#{@promotion.code}1", from: @promotion.from, pizza_id: @promotion.pizza_id, pizza_size_id: @promotion.pizza_size_id, to: @promotion.to } }
+    patch promotion_url(@promotion), params: {
+      promotion: {
+        code: "#{@promotion.code}1",
+        from: @promotion.from,
+        pizza_id: @promotion.pizza_id,
+        pizza_size_id: @promotion.pizza_size_id,
+        to: @promotion.to
+      }
+    }
     assert_redirected_to promotions_url
   end
 

@@ -10,7 +10,7 @@ class OrderItem < ApplicationRecord
   validates :order, :pizza, :pizza_size, presence: true
 
   def compute_price
-    compute_pizza_price() + compute_extras_price()
+    compute_pizza_price + compute_extras_price
   end
 
   def compute_pizza_price
@@ -18,6 +18,6 @@ class OrderItem < ApplicationRecord
   end
 
   def compute_extras_price
-    extras.map {|e| e.ingredient.price}.sum() * pizza_size.multiplier
+    extras.map { |e| e.ingredient.price }.sum * pizza_size.multiplier
   end
 end

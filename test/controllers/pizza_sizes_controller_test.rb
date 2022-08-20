@@ -17,7 +17,10 @@ class PizzaSizesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pizza_size" do
     assert_difference("PizzaSize.count") do
-      post pizza_sizes_url, params: { pizza_size: { multiplier: @pizza_size.multiplier, name: "#{@pizza_size.name}1" } }
+      post pizza_sizes_url, params: { pizza_size: {
+        multiplier: @pizza_size.multiplier,
+        name: "#{@pizza_size.name}1"
+      } }
     end
 
     assert_redirected_to pizza_sizes_url
@@ -29,7 +32,10 @@ class PizzaSizesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pizza_size" do
-    patch pizza_size_url(@pizza_size), params: { pizza_size: { multiplier: @pizza_size.multiplier, name: "#{@pizza_size.name}1" } }
+    patch pizza_size_url(@pizza_size), params: { pizza_size: {
+      multiplier: @pizza_size.multiplier,
+      name: "#{@pizza_size.name}1"
+    } }
     assert_redirected_to pizza_sizes_url
   end
 
