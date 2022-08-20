@@ -40,23 +40,18 @@ class Order < ApplicationRecord
   end
 
   def compute_price
-    costs_of_extras_in_promotion_items = 0
     costs_of_promotion_items = 0
-
     non_promotional_order_items = order_items
 
     promotions.each do |p|
-      affected_order_items = order_items.select { |oi| oi.pizza_id == p.pizza_id && oi.pizza_size_id == p.pizza_size_id }
-      non_promotional_order_items -= affected_order_items
+      result = p.compute_promotion(order_items)
 
-      costs_of_extras_in_promotion_items += affected_order_items.sum(&:compute_extras_price)
-      costs_of_promotion_items += affected_order_items.take((affected_order_items.count.to_f() * p.to / p.from).ceil()).sum(&:compute_pizza_price)
+      non_promotional_order_items -= result[:affected_order_items]
+      costs_of_promotion_items += result[:promotion_item_costs]
     end
 
-    price = non_promotional_order_items.sum(&:compute_price) + costs_of_extras_in_promotion_items + costs_of_promotion_items
-    if discount
-      price = discount.discount_price(price)
-    end
+    price = non_promotional_order_items.sum(&:compute_price) + costs_of_promotion_items
+    price = discount.discount_price(price) if discount
     self.price = price
   end
 end
