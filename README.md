@@ -2,7 +2,7 @@
 
 ## App Requirements
 
-- Ruby/Rails
+- Ruby >= 3.1
 - PostgreSQL
 
 or
