@@ -20,23 +20,26 @@ class Order < ApplicationRecord
 
   def self.build(order_params)
     order = Order.new(discount_id: order_params[:discount_id])
-    order.order_promotions.build(order_params[:promotions].filter {|e| !e.blank?}.map {|p| {promotion_id: p} })
-    order.order_items.build(order_params[:order_items_attributes].values.map { |oi|
-      {
-        pizza_id: oi[:pizza_id].to_i,
-        pizza_size_id: oi[:pizza_size_id].to_i
-      }
-    })
-    order.order_items.map.with_index { |oi, i|
-      oi.extras.build(order_params[:order_items_attributes].values[i][:extras].filter {|e| !e.blank?}.map { |e|
-        {ingredient_id: e, kind: "extras"}
-      })
-      oi.omited.build(order_params[:order_items_attributes].values[i][:omited].filter {|e| !e.blank?}.map { |e|
-        {ingredient_id: e, kind: "omited"}
-      })
-    }
+    order.order_promotions.build(order_params[:promotions].filter { |e| !e.blank? }.map { |p| { promotion_id: p } })
+    order.order_items.build(build_order_items(order_params[:order_items_attributes]))
+    order.order_items.map.with_index do |oi, i|
+      oi.extras.build(build_order_item_ingredient(order_params[:order_items_attributes], "extras", i))
+      oi.omited.build(build_order_item_ingredient(order_params[:order_items_attributes], "omited", i))
+    end
     order.compute_price
     order
+  end
+
+  def self.build_order_items(order_items_attributes)
+    order_items_attributes.values.map do |oi|
+      { pizza_id: oi[:pizza_id].to_i, pizza_size_id: oi[:pizza_size_id].to_i }
+    end
+  end
+
+  def self.build_order_item_ingredient(order_items_attributes, key, index)
+    order_items_attributes.values[index][key].filter { |e| !e.blank? }.map do |e|
+      { ingredient_id: e, kind: key }
+    end
   end
 
   def compute_price
