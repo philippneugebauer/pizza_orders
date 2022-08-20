@@ -37,6 +37,75 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3.50, Order.last.price
   end
 
+  test "should create order with promotion" do
+    @order = orders(:two)
+    assert_difference("Order.count") do
+      order_item_attributes = {
+        id: nil,
+        pizza_id: @order.order_items.first.pizza_id,
+        pizza_size_id: @order.order_items.first.pizza_size_id,
+        _destroy: 0,
+        extras: [],
+        omited: []
+      }
+      post orders_url, params: { order: {
+        discount_id: @order.discount_id,
+        price: @order.price,
+        promotions: [@order.promotions.first.id],
+        order_items_attributes: { "0" => order_item_attributes, "1" => order_item_attributes }
+      } }
+    end
+
+    assert_redirected_to orders_url
+    assert_equal 3.50, Order.last.price
+  end
+
+  test "should create order with discount" do
+    @order = orders(:three)
+    assert_difference("Order.count") do
+      order_item_attributes = {
+        id: nil,
+        pizza_id: @order.order_items.first.pizza_id,
+        pizza_size_id: @order.order_items.first.pizza_size_id,
+        _destroy: 0,
+        extras: [],
+        omited: []
+      }
+      post orders_url, params: { order: {
+        discount_id: @order.discount_id,
+        price: @order.price,
+        promotions: [""],
+        order_items_attributes: { "0" => order_item_attributes }
+      } }
+    end
+
+    assert_redirected_to orders_url
+    assert_equal 3.15, Order.last.price
+  end
+
+  test "should create order with promotion and discount" do
+    @order = orders(:four)
+    assert_difference("Order.count") do
+      order_item_attributes = {
+        id: nil,
+        pizza_id: @order.order_items.first.pizza_id,
+        pizza_size_id: @order.order_items.first.pizza_size_id,
+        _destroy: 0,
+        extras: [],
+        omited: []
+      }
+      post orders_url, params: { order: {
+        discount_id: @order.discount_id,
+        price: @order.price,
+        promotions: [@order.promotions.first.id],
+        order_items_attributes: { "0" => order_item_attributes, "1" => order_item_attributes }
+      } }
+    end
+
+    assert_redirected_to orders_url
+    assert_equal 3.15, Order.last.price
+  end
+
   test "should update order" do
     assert_difference("Order.open.count", -1) do
       patch order_url(@order)
