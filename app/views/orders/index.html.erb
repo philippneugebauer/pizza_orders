@@ -44,10 +44,10 @@
                 <% if item.extras.any? || item.omited.any? %>
                   <ul aria-label="order item extra or omited ingredients">
                     <% if item.extras.any? %>
-                      <li><%= "Add: #{item.extras.map {|e| e.ingredient.name}.join(", ")}" %></li>
+                      <li><%= "Add: #{ item.extras.map { |e| e.ingredient.name }.join(", ") }" %></li>
                     <% end %>
                     <% if item.omited.any? %>
-                      <li><%= "Remove: #{item.omited.map {|e| e.ingredient.name}.join(", ")}" %></li>
+                      <li><%= "Remove: #{ item.omited.map { |e| e.ingredient.name }.join(", ") }" %></li>
                     <% end %>
                   </ul>
                 <% end %>
