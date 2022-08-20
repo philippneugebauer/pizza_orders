@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.open()
+    @orders = Order.open
   end
 
   # GET /orders/new
@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
       :discount_id,
       promotions: [],
       order_items_attributes: [
-        :id, :pizza_id, :pizza_size_id, :_destroy, extras: [], omited: []
+        :id, :pizza_id, :pizza_size_id, :_destroy, { extras: [] }, { omited: [] }
       ]
     )
   end
