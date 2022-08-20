@@ -46,6 +46,6 @@ rails test:system
 
 ## Domain Model
 
-![domain model image](domain_model.pdf)
+![domain model image](domain_model.png)
 
 generated with [rails-erd](https://github.com/voormedia/rails-erd)
