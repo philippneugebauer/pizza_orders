@@ -43,3 +43,7 @@ rails db:setup
 rails test
 rails test:system
 ```
+
+## Domain Model
+
+[domain_model.pdf](domain_model.pdf) visualizes the domain model generated with [rails-erd](https://github.com/voormedia/rails-erd)
