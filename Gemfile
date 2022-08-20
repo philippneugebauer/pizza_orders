@@ -14,16 +14,6 @@ gem "pg", "~> 1.1"
 
 gem 'bootstrap', '~> 5.2.0'
 
-gem "brakeman"
-
-gem 'rubocop', require: false
-
-gem 'reek'
-
-gem 'rails_best_practices'
-
-gem "rubycritic", require: false
-
 gem "vanilla_nested"
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -72,6 +62,16 @@ group :development do
   gem "web-console"
 
   gem 'rails-erd'
+
+  gem "brakeman"
+
+  gem 'rubocop', require: false
+
+  gem 'reek'
+
+  gem 'rails_best_practices'
+
+  gem "rubycritic", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
