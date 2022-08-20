@@ -33,5 +33,5 @@ System tests require `Chrome`. Tests aren't supported within Docker environment.
 
 ```
 rails test
-rails system:test
+rails test:system
 ```
