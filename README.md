@@ -61,6 +61,12 @@ It's arguable to which extend you must follow such gems.
 Even though such gems are a great indicator for problems, common sense must be applied for its usefulness instead of rigid following.
 Anyway, such rules need to be agreed on within the team.
 
+## Differences to UI Wireframe
+
+I allowed myself to improve the wireframe.
+I cleaned up the design and left out information that is not important for the user like the ID.
+Even more, discount codes and promotions are only displayed if they are used so that the user doesn't need to scan the full text.
+
 ## Domain Model
 
 ![domain model image](domain_model.png)
