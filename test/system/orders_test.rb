@@ -16,5 +16,4 @@ class OrdersTest < ApplicationSystemTestCase
 
     assert_text "Order completed."
   end
-
 end
