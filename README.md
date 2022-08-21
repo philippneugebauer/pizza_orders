@@ -47,7 +47,7 @@ rails test
 rails test:system
 ```
 
-The test coverage can be found at `/coverage/index.html` afte test execution.
+The test coverage can be found at `coverage/index.html` after test execution.
 
 ## Static Code Analyzer
 
