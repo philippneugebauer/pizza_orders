@@ -19,6 +19,7 @@ docker-compose up
 The docker setup is so configured that the PostgreSQL doesn't save any data when shut down.
 This can be changed by removing the comments around `volumes:` in `docker-compose.yml`.
 
+or
 ```
 install rails env
 bundle install
