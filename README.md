@@ -66,6 +66,7 @@ Anyway, such rules need to be agreed on within the team.
 I allowed myself to improve the wireframe.
 I cleaned up the design and left out information that is not important for the user like the ID.
 Even more, discount codes and promotions are only displayed if they are used so that the user doesn't need to scan the full text.
+I am happy to discuss my reasonings.
 
 ## Domain Model
 
